@@ -124,6 +124,11 @@
         .content ol li
         {
             counter-increment: number;
+            text-decoration: line-through;
+        }
+        .content ol li.clear
+        {
+            text-decoration: none;
         }
         .content ol li a
         {
@@ -150,7 +155,6 @@
             border: 1px solid rgb(212, 212, 212);
             background: linear-gradient(to bottom, rgb(255, 255, 255) 20%, rgba(236, 233, 233, 0.371));
         }
- 
     </style>
 </head>
 <body>
@@ -192,10 +196,10 @@
                     <li><a href="#">제어문</a></li>
                     <li><a href="#">타입 변환과 단축 평가</a></li>
                     <li><a href="#">객체 리터럴</a></li>
-                    <li><a href="poiema11.html">원시 값과 객체의 비교</a></li>
-                    <li><a href="#">함수</a></li>
-                    <li><a href="#">스코프</a></li>
-                    <li><a href="#">전역 변수의 문제점</a></li>
+                    <li class="clear"><a href="poiema11.html">원시 값과 객체의 비교</a></li>
+                    <li class="clear"><a href="poiema12.html">함수</a></li>
+                    <li class="clear"><a href="poiema13.html">스코프</a></li>
+                    <li class="clear"><a href="poiema14.html">전역 변수의 문제점</a></li>
                     <li><a href="#">let, const와 블록 레벨 스코프</a></li>
                     <li><a href="#">프로퍼티 어트리뷰트</a></li>
                     <li><a href="#">생성자 함수에 의한 객체 생성</a></li>
