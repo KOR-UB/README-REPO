@@ -34,6 +34,7 @@ body
     background: #282a36;
     color: white;
     position: relative;
+    letter-spacing: 0.15em;
 }
 .js-text::before
 {
@@ -47,7 +48,7 @@ body
 }
 .js-text .keyword
 {
-    color: violet;
+    color: rgb(204, 99, 204);
 }
 .js-text .def
 {
@@ -103,7 +104,7 @@ a
 }
 .pl
 {
-    padding: 40px;
+    padding: 10px 30px;
 }
 .pl li
 {
@@ -118,6 +119,7 @@ header h1
 }
 em
 {
+    font-size: 1.05em;
     font-style: normal;
     font-weight: bold;
 }
@@ -199,7 +201,9 @@ img
     height: 100%;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     border-left: 15px solid #33a9dc;
+    padding-top: 10%;
 }
 .hiddenlist::before
 {
@@ -216,13 +220,12 @@ img
 }
 .hiddenlist .item
 {
-    padding-top: 15%;
-    font-size: 3em;
+    font-size: 2em;
 }
 .hiddenlist .item ul
 {
     margin-top: 30px;
-    font-size: 2rem;
+    font-size: 1.3rem;
     list-style: none;
 }
 .hiddenlist li
