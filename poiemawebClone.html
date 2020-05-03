@@ -57,6 +57,12 @@
         {
             color: rgb(255, 115, 0);
         }
+        .sec3 .title i,
+        .sec3 .title .titleBx .titlenum,
+        .sec3 .content ol li a::before
+        {
+            color: rgb(255, 102, 0);
+        }
         header h1
         {
             font-size: 3.5vw;
@@ -78,6 +84,7 @@
             width: 270px;
             min-height: 120px;
             background: #2E303E;
+            border-top: 1px solid #44475b;
             border-bottom: 1px solid #44475b;
         }
         .sec2 .title
@@ -114,6 +121,7 @@
             width: calc(1140px - 270px);
             background: white;
             font-weight: bold;
+            border-top: 1px solid #ebeff5;
             border-bottom: 1px solid #ebeff5;
         }
         .content ol
@@ -152,7 +160,7 @@
         }
         .content ol li:hover a
         {
-            border: 1px solid rgb(212, 212, 212);
+            box-shadow: inset 0 0 0 1px rgb(192, 192, 192);
             background: linear-gradient(to bottom, rgb(255, 255, 255) 20%, rgba(236, 233, 233, 0.371));
         }
     </style>
@@ -200,9 +208,9 @@
                     <li class="clear"><a href="poiema12.html">함수</a></li>
                     <li class="clear"><a href="poiema13.html">스코프</a></li>
                     <li class="clear"><a href="poiema14.html">전역 변수의 문제점</a></li>
-                    <li><a href="#">let, const와 블록 레벨 스코프</a></li>
-                    <li><a href="#">프로퍼티 어트리뷰트</a></li>
-                    <li><a href="#">생성자 함수에 의한 객체 생성</a></li>
+                    <li class="clear"><a href="poiema15.html">let, const와 블록 레벨 스코프</a></li>
+                    <li class="clear"><a href="poiema16.html">프로퍼티 어트리뷰트</a></li>
+                    <li class="clear"><a href="poiema17.html">생성자 함수에 의한 객체 생성</a></li>
                     <li><a href="#">함수와 일급 객체</a></li>
                     <li><a href="#">프로토타입</a></li>
                     <li><a href="#">strict mode</a></li>
@@ -234,6 +242,20 @@
                     <li><a href="#">제너레이터와 async/awit</a></li>
                     <li><a href="#">모듈</a></li>
                     <li><a href="#">Babel과 Webpack을 이용한 ES6 개발 환경 구축</a></li>       
+                </ol>
+            </div>
+        </div>
+        <div class="sec sec3">
+            <div class="title">
+                <i class="devicon-nodejs-plain"></i>
+                <div class="titleBx">
+                    <h2>Exercise</h2>
+                    <p><em class="titlenum">1 </em>lessons</p> 
+                </div>
+            </div>
+            <div class="content">
+                <ol>
+                    <li class="clear"><a href="control.html">제어문 연습 문제</a></li>
                 </ol>
             </div>
         </div>

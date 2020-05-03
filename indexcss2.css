@@ -304,3 +304,31 @@ img
 {
     color: #d16098;
 }
+table
+{
+    width: 100%;
+    margin: 20px 0;
+    font-size: 0.8em;
+    border-collapse: collapse;
+}
+table th
+{
+    padding: 10px;
+    background: rgb(230, 230, 230);
+}
+table td
+{
+    padding: 15px;
+    background: rgb(243, 243, 243);
+}
+table td.center
+{
+    text-align: center;
+}
+.bp
+{
+    padding: 40px;
+    border-left: 4px solid rgb(0, 195, 255);
+    background: rgb(213, 238, 248);
+    color: rgb(114, 114, 114);
+}

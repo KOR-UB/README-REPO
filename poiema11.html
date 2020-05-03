@@ -19,14 +19,6 @@
             <button class="listtoggle"><i class="fa fa-list-ol"></i></button>
         </div>
         <div class="max1140">
-            <p>
-                <a href="https://poiemaweb.com/fastcampus/type" class="link">“6. 데이터 타입”</a>에서 살펴보았듯이 자바스크립트가 제공하는 7가지 데이터 타입(숫자, 문자열, 불리언, null, undefined, symbol, 객체 타입)은 크게 <em>원시 타입과 객체 타입</em>으로 구분할 수 있다. 데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유를 알아보자 원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시 타입과 객체 타입은 크게 세가지 측면에서 다르다.
-            </p>
-            <ul class="pl">
-                <li>원시 타입의 값, 즉 원시 값은 변경 불가능한 값이다. 이에 비해 객체 타입의 값, 즉 객체는 변경 가능한 값이다.</li>
-                <li>원시 값을 변수에 할당하면 변수에는 실제 값이 저장된다. 이에 비해 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
-                <li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라 한다. 이에 비해 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라 한다.</li>
-            </ul>
             <div class="hiddenlist-group">
                 <ul class="hiddenlist">
                     <li class="item"><a href="#1">1. 원시 값</a>
@@ -45,6 +37,14 @@
                     <button class="listtoggle close">&times;</button>
                 </ul>
             </div>
+            <p>
+                <a href="https://poiemaweb.com/fastcampus/type" class="link">“6. 데이터 타입”</a>에서 살펴보았듯이 자바스크립트가 제공하는 7가지 데이터 타입(숫자, 문자열, 불리언, null, undefined, symbol, 객체 타입)은 크게 <em>원시 타입과 객체 타입</em>으로 구분할 수 있다. 데이터 타입을 원시 타입과 객체 타입으로 구분하는 이유를 알아보자 원시 타입과 객체 타입은 근본적으로 다르다는 의미일 것이다. 원시 타입과 객체 타입은 크게 세가지 측면에서 다르다.
+            </p>
+            <ul class="pl">
+                <li>원시 타입의 값, 즉 원시 값은 변경 불가능한 값이다. 이에 비해 객체 타입의 값, 즉 객체는 변경 가능한 값이다.</li>
+                <li>원시 값을 변수에 할당하면 변수에는 실제 값이 저장된다. 이에 비해 객체를 변수에 할당하면 변수에는 참조 값이 저장된다.</li>
+                <li>원시 값을 갖는 변수를 다른 변수에 할당하면 원본의 원시 값이 복사되어 전달된다. 이를 값에 의한 전달이라 한다. 이에 비해 객체를 가리키는 변수를 다른 변수에 할당하면 원본의 참조 값이 복사되어 전달된다. 이를 참조에 의한 전달이라 한다.</li>
+            </ul>
             <h2 class="index" id="1">1. 원시 값 <a href="#nav">#</a></h2>
             <h3 class="index" id="1.1">1.1 변경 불가능한 값 <a href="#nav">#</a></h3>
             <p>
@@ -210,21 +210,6 @@
             <p><em>객체는 위와 같은 특징을 가지고 있다. 객체의 값이 담긴 메모리 주소를 서로 공유할 수 있다.</em></p>
         </div>
     </div>
-    <script>
-        const listtoggle = document.querySelectorAll(".listtoggle");
-        const list_a = document.querySelectorAll(".hiddenlist a");
-        const index_a = document.querySelectorAll(".index a");
-
-        Array.from(index_a).forEach(index_a => index_a.addEventListener("click", NavHandler));
-        
-        function NavHandler()
-        {
-            const hiddenlist = document.querySelector(".hiddenlist-group");
-            hiddenlist.classList.toggle("active");
-        }
-        Array.from(list_a).forEach(list_a => list_a.addEventListener("click",NavHandler));
-
-        Array.from(listtoggle).forEach(listtoggle => listtoggle.addEventListener("click",NavHandler));
-    </script>
+    <script src="poiema.js"></script>
 </body>
 </html> 
