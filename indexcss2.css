@@ -332,3 +332,28 @@ table td.center
     background: rgb(213, 238, 248);
     color: rgb(114, 114, 114);
 }
+pre {
+    overflow: hidden;
+}
+@media (max-width: 1160px) {
+    header h1 {
+        font-size: 2em;
+    }
+    .index a
+    {
+        left: -50px;
+    }
+    .hiddenlist {
+        padding: 10% 15% 0 0;
+        font-size: 0.4em;
+    }
+    pre.quiz {
+        margin-left: -75px;
+        width: calc(100% + 125px);
+        font-size: 0.4em;
+    }
+    .quiz:hover {
+        transform: none;
+    }
+
+}
