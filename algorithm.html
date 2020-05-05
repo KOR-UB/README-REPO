@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>poiemaweb Clone</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="indexcss2.css">
+    <style>
+        .hiddenlist
+        {
+            padding-top: 4%;
+        }
+        .hiddenlist li
+        {
+            width: 100%;
+            padding: 3px 0;
+            text-align: left;
+        }
+        .quiz
+        {
+            width: 100%;
+            background: rgb(24, 35, 46);
+            margin: 10px 0;
+            padding-bottom: 20px;
+            font-size: 1.1em;
+            color: #fff;
+            transition: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .quiz:hover
+        {
+            background: rgb(201, 218, 236);
+            color: rgb(0, 0, 0);
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>2. 자료 구조와 알고리즘</h1>
+    </header>
+    <div class="wraper" id="nav">
+        <div class="sticky">
+            <h2><a href="#"><i class="devicon-javascript-plain"></i>JAVASCRIPT</a></h2>
+            <button class="listtoggle"><i class="fa fa-list-ol"></i></button>
+        </div>
+        <div class="max1140">
+            <div class="hiddenlist-group">
+                <ul class="hiddenlist" style="display: block;">
+                    <li class="item"><a href="#1">1. 검색</a>
+                        <ul>
+                            <li><a href="#1.1">1.1. 선형 검색</a></li>
+                            <li><a href="#1.2">1.2. 이진 검색</a></li>
+                        </ul>
+                    </li>
+                    <li class="item"><a href="#2">2. 정렬</a>
+                        <ul>
+                            <li><a href="#2.1">2.1. 버블 정렬</a></li>
+                            <li><a href="#2.2">2.2. 선택 정렬</a></li>
+                            <li><a href="#2.3">2.3. 삽입 정렬</a></li>
+                        </ul>
+                    </li>
+                    <button class="listtoggle close">&times;</button>
+                </ul>
+            </div>
+            <h2 class="index" id="1">1. 검색 <a href="#nav">#</a></h2>
+            <h3 class="index" id="1.1">1.1. 선형 검색 <a href="#nav">#</a></h3>
+            <pre class="quiz">
+            </pre>
+            <h3 class="index" id="1.2">1.2. 이진 검색 <a href="#nav">#</a></h3>
+            <pre class="quiz">
+            </pre>
+            <h2 class="index" id="2">2. 정렬 <a href="#nav">#</a></h2>
+            <h3 class="index" id="2.1">2.1. 버블 정렬 <a href="#nav">#</a></h3>
+            <pre class="quiz">
+            </pre>
+            <h3 class="index" id="2.2">2.2. 선택 정렬 <a href="#nav">#</a></h3>
+            <pre class="quiz">
+            </pre>
+            <h3 class="index" id="2.3">2.3. 삽입 정렬 <a href="#nav">#</a></h3>
+            <pre class="quiz">
+            </pre>
+        </div>
+    </div>
+    <script src="poiema.js"></script>
+    <script src="control.js"></script>
+    <script>
+        const obj = [
+            q1 = `
+            function linearSearch(array, target) {
+              for (let i = 0; i < array.length; i++)
+              {
+                if (array[i] === target) return i;
+              }
+              return -1;
+            }
+            console.log(linearSearch([1, 2, 3, 4, 5, 6], 1)); // 0
+            console.log(linearSearch([1, 2, 3, 4, 5, 6], 3)); // 2
+            console.log(linearSearch([1, 2, 3, 4, 5, 6], 5)); // 4
+            console.log(linearSearch([1, 2, 3, 4, 5, 6], 6)); // 5
+            console.log(linearSearch([1, 2, 3, 4, 5, 6], -1)); // -1
+            console.log(linearSearch([1, 2, 3, 4, 5, 6], 0)); // -1
+            console.log(linearSearch([1, 2, 3, 4, 5, 6], 7)); // -1`,
+            q2 = `
+            function binarySearch (array, target) {
+              let start = 0;
+              let end = array.length - 1;
+              while (start <= end) {
+                let mid = Math.floor((start + end) * 0.5);
+                if(array[mid] === target) return mid;
+                else if (array[mid] > target) end = mid - 1;
+                else start = mid + 1;
+              }
+              return -1;
+            }
+            console.log(binarySearch([1, 2, 3, 4, 5, 6], 1)); // 0
+            console.log(binarySearch([1, 2, 3, 4, 5, 6], 3)); // 2
+            console.log(binarySearch([1, 2, 3, 4, 5, 6], 5)); // 4
+            console.log(binarySearch([1, 2, 3, 4, 5, 6], 6)); // 5
+            console.log(binarySearch([1, 2, 3, 4, 5, 6], -1)); // -1
+            console.log(binarySearch([1, 2, 3, 4, 5, 6], 0)); // -1
+            console.log(binarySearch([1, 2, 3, 4, 5, 6], 7)); // -1`,
+            q3 = `
+            버블 정렬`,
+            q4 = `
+            선택 정렬`,
+            q5 = `
+            삽입 정렬`,    
+        ]
+       let pre = document.querySelectorAll("pre");
+       for (let i = 0; i < pre.length; i++)
+       {
+            pre[i].textContent = obj[i];
+       }
+    </script>
+</body>
+</html> 
