@@ -13,6 +13,7 @@ body
     background-color: #d16098;
     background-image: linear-gradient(142deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);
     background-attachment: fixed;
+    font-size: 20px;
 }
 .link-caption
 {
@@ -24,7 +25,7 @@ body
     width: 100%;
     margin: 0 auto;
     min-height: 500vh;
-    max-width: 1140px;
+    max-width: 1440px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     background: #fff;
 }
@@ -52,15 +53,15 @@ body
 }
 .js-text .def
 {
-    color: rgb(64, 228, 23);
+    color: rgb(128, 247, 99);
 }
 .js-text .str
 {
-    color: rgb(230, 230, 0);
+    color: rgb(250, 250, 129);
 }
 .js-text .property
 {
-    color: rgb(111, 180, 207);
+    color: rgb(165, 222, 245);
 }
 .js-text .num
 {
@@ -232,7 +233,7 @@ img
 }
 .hiddenlist .item ul
 {
-    margin-top: 30px;
+    margin: 30px 0;
     font-size: 1.3rem;
     list-style: none;
 }
@@ -333,11 +334,19 @@ table td.center
     color: rgb(114, 114, 114);
 }
 pre {
-    overflow: hidden;
+    overflow-y: hidden;
+    padding-right: 30px;
+}
+pre::-webkit-scrollbar
+{
+    height: 10px;
+}
+pre::-webkit-scrollbar-thumb{
+    background: rgb(255, 0, 119);
 }
 @media (max-width: 1160px) {
     header h1 {
-        font-size: 2em;
+        font-size: 1.5em;
     }
     .index a
     {
@@ -350,9 +359,9 @@ pre {
     pre.quiz {
         margin-left: -75px;
         width: calc(100% + 125px);
-        font-size: 0.4em;
+        font-size: 0.8em;
     }
-    .quiz:hover {
+    pre.quiz:hover {
         transform: none;
     }
 

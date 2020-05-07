@@ -38,6 +38,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
         }
         a
         {
@@ -74,8 +75,9 @@
         {
             width: 100%;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: flex-start;
+            flex-wrap: wrap;
         }
         .title
         {
@@ -163,6 +165,17 @@
             box-shadow: inset 0 0 0 1px rgb(192, 192, 192);
             background: linear-gradient(to bottom, rgb(255, 255, 255) 20%, rgba(236, 233, 233, 0.371));
         }
+        @media (max-width: 1160px) {
+            header h1 {
+                font-size: 2em;
+            }
+            .content,
+            .title 
+            {
+            width: 100%;
+            min-height: auto !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -212,9 +225,9 @@
                     <li class="clear"><a href="poiema16.html">프로퍼티 어트리뷰트</a></li>
                     <li class="clear"><a href="poiema17.html">생성자 함수에 의한 객체 생성</a></li>
                     <li class="clear"><a href="poiema18.html">함수와 일급 객체</a></li>
-                    <li><a href="#">프로토타입</a></li>
-                    <li><a href="#">strict mode</a></li>
-                    <li><a href="#">빌트인 객체</a></li>
+                    <li class="clear"><a href="poiema19.html">프로토타입</a></li>
+                    <li class="clear"><a href="poiema20.html">strict mode</a></li>
+                    <li class="clear"><a href="poiema21.html">빌트인 객체</a></li>
                     <li><a href="#">this</a></li>
                     <li><a href="#">실행 컨텍스트</a></li>
                     <li><a href="#">클로저</a></li>
