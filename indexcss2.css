@@ -105,6 +105,7 @@ header
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 a
 {
@@ -145,7 +146,7 @@ figure figcaption
     color: rgb(155, 155, 155);
     letter-spacing: -0.1em;
 }
-img
+figure img
 {
     max-width: 650px;
 }
@@ -311,6 +312,7 @@ table
     margin: 20px 0;
     font-size: 0.8em;
     border-collapse: collapse;
+    table-layout: fixed;
 }
 table th
 {
@@ -364,5 +366,24 @@ pre::-webkit-scrollbar-thumb{
     pre.quiz:hover {
         transform: none;
     }
-
+}
+@media (max-width: 700px) {
+    figure img {
+       max-width: 100% !important;
+    }
+    body
+    {
+        font-size: 0.95em;
+    }
+    .max1140
+    {
+        padding: 15px;
+    }
+    table th {
+        width: auto !important;
+        font-size: 0.85em;
+    }
+    table td{
+        padding: 5px;
+    }
 }
