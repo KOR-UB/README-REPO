@@ -359,8 +359,6 @@ pre::-webkit-scrollbar-thumb{
         font-size: 0.4em;
     }
     pre.quiz {
-        margin-left: -75px;
-        width: calc(100% + 125px);
         font-size: 0.8em;
     }
     pre.quiz:hover {

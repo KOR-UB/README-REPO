@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box
+        {
+            width: 400px;
+            height: 400px;
+            background: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam asperiores quidem corporis quam consequatur beatae facilis repellat eum. Saepe, quos officia! Alias voluptate in tempora soluta quae nostrum placeat voluptatum.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam suscipit at nisi hic veritatis rem illum cumque, cupiditate odio, et reiciendis. In nesciunt temporibus autem amet quidem, et voluptatem totam.
+    </div>
+    <script>
+        let i = 100;
+        document.querySelector(".box").addEventListener("click", function (e) {
+            console.dir(e);
+            if(e.target.style.backgroundColor === "skyblue")
+            {
+                e.target.style.backgroundColor = "white";
+            }
+            setTimeout(function () {
+                e.target.style.backgroundColor = "red";
+            } ,5000)
+        });
+    </script>
+</body>
+</html>
