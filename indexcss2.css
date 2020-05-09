@@ -29,7 +29,8 @@ body
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     background: #fff;
 }
-.js-text
+.js-text,
+.code-text
 {
     margin: 20px 0;
     background: #282a36;
@@ -37,7 +38,8 @@ body
     position: relative;
     letter-spacing: 0.15em;
 }
-.js-text::before
+.js-text::before,
+.code-text::before
 {
     content: "JAVASCRIPT";
     position: absolute;
@@ -46,6 +48,12 @@ body
     background: #f4655b;
     font-size: 0.7em;
     padding: 3px 5px;
+}
+.code-text::before
+{
+    content: "CODE";
+    background: #32867b;
+    line-height: 16px;
 }
 .js-text .keyword
 {
