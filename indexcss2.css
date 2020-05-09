@@ -13,7 +13,7 @@ body
     background-color: #d16098;
     background-image: linear-gradient(142deg, #f4a35b, #f4655b 31%, #d16098 65%, #ca3469);
     background-attachment: fixed;
-    font-size: 20px;
+    font-size: 16px;
 }
 .link-caption
 {
@@ -25,7 +25,7 @@ body
     width: 100%;
     margin: 0 auto;
     min-height: 500vh;
-    max-width: 1440px;
+    max-width: 1140px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     background: #fff;
 }
@@ -312,7 +312,6 @@ table
     margin: 20px 0;
     font-size: 0.8em;
     border-collapse: collapse;
-    table-layout: fixed;
 }
 table th
 {
@@ -331,9 +330,9 @@ table td.center
 .bp
 {
     padding: 40px;
-    border-left: 4px solid rgb(0, 195, 255);
-    background: rgb(213, 238, 248);
-    color: rgb(114, 114, 114);
+    border-left: 4px solid rgb(2, 170, 221);
+    background: rgb(229, 245, 252);
+    color: rgb(109, 109, 109);
 }
 pre {
     overflow-y: hidden;
@@ -345,6 +344,12 @@ pre::-webkit-scrollbar
 }
 pre::-webkit-scrollbar-thumb{
     background: rgb(255, 0, 119);
+}
+.js-code
+{
+    padding: 2px 5px;
+    background: rgb(255, 243, 245);
+    color: rgb(173, 63, 137);
 }
 @media (max-width: 1160px) {
     header h1 {
