@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode & White Mode</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+            background: #11161d;
+            transition: 0.5s;
+        }
+        label
+        {
+            position: relative;
+            width:240px;
+            height: 80px;
+            cursor: pointer;
+            margin:20px 0;
+        }
+        label input
+        {
+            opacity: 0;
+        }
+        label .check
+        {
+            position: absolute;
+            top:0;
+            left: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            background: #101010;
+            border-radius: 40px;
+            box-shadow: 0 0 0 4px rgb(0, 255, 157);
+            transition: 0.5s;
+        }
+        label .check:before
+        {
+            content: "";
+            position: absolute;
+            top: calc(50% - 4px);
+            left: -30px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #f00;
+            transition: 0.5s;
+            box-shadow: 0 0 5px #f00,
+            0 0 10px #f00,
+            0 0 20px #f00,
+            0 0 40px #f00,
+            0 0 80px #f00;
+        }
+        label input:checked ~ .check:before
+        {
+            box-shadow: none;
+            background: #101010;
+        }
+        label .check:after
+        {
+            content: "";
+            position: absolute;
+            top: calc(50% - 4px);
+            right: -30px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            box-shadow: none;
+            background: #101010;
+            transition: 0.5s;
+
+        }
+        label input:checked ~ .check:after
+        {
+            background: #0f0;
+            box-shadow: 0 0 5px #0f0,
+            0 0 10px #0f0,
+            0 0 20px #0f0,
+            0 0 40px #0f0,
+            0 0 80px #0f0;
+        }
+        label .btn
+        {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 120px;
+            height: 80px;
+            border-radius: 40px;
+            background: #333;
+            transition: 0.5s;
+            box-shadow: inset 0 -20px 15px #292929,
+            inset 0 20px 15px #292929;
+        }
+        label .btn:before
+        {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0px;
+            width: 52px;
+            height: 80px;
+            background: #252525;
+            border-top-left-radius: 80px;
+            border-bottom-left-radius: 80px;
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3);
+            filter: blur(2px);
+        }
+        label .btn:after
+        {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 52px;
+            height: 80px;
+            background: #252525;
+            border-top-right-radius: 80px;
+            border-bottom-right-radius: 80px;
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.3);
+            filter: blur(2px);
+        }
+        label input:checked ~ .btn
+        {
+            left:50%;
+        }
+        .active
+        {
+            background: #fff !important;
+        }
+        label .check.active
+        {
+            box-shadow: 0 0 0 4px rgb(255, 71, 58);
+        }
+        .box,
+        .box2
+        {
+            width: 700px;
+            height: 500px;
+            background: rgb(245, 245, 245);
+            text-align: justify;
+            padding: 30px;
+            transition: 0.5s;
+        }
+        .box2
+        {
+            margin: 30px;
+            width: 500px;
+            height: 200px;
+        }
+        .fill
+        {
+            background: #11161d;
+            color: white;
+        }
+        .box2.fill {
+            background: rgb(62, 81, 121);
+        }
+    </style>
+</head>
+<body class="dark">
+    <label>
+        <input type="checkbox" name="" id="checkbox">
+        <span class="check"></span>
+        <span class="btn"></span>
+    </label>
+    <div class="box">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium quae pariatur soluta illo adipisci iusto repellat impedit obcaecati enim, similique error consectetur delectus eligendi ducimus repudiandae? Reiciendis voluptatem ea cum?
+        Accusamus, suscipit facilis. Sequi pariatur facere alias laborum eveniet repellat nesciunt ex nulla minus ipsum sunt nostrum dolor nisi enim, possimus neque numquam laboriosam quae quo minima harum sed iure.
+        Doloremque fugit est quisquam distinctio tempore harum aperiam ipsa alias, vero quam molestias. Maiores numquam illo molestiae itaque voluptate, aliquid eaque ratione distinctio quas, animi dicta atque repellat ipsum porro.
+        Optio suscipit facere nemo. Minus voluptatem nulla laudantium dignissimos necessitatibus dolorum amet eos eum quidem, sapiente totam repellendus ratione similique et dolores dolor deleniti explicabo velit est omnis consequatur perferendis.
+        Dolorem voluptas illo omnis animi, ipsum consequatur nisi aliquam nobis qui cupiditate id aliquid rerum commodi, voluptatem recusandae iusto beatae possimus vitae repudiandae a tenetur enim rem pariatur deleniti. Rerum?
+    </div>
+    <div class="box2">
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae officia asperiores autem quas quidem! Nulla consectetur omnis corrupti, saepe corporis perspiciatis autem earum voluptatibus eum sunt quas ipsam reprehenderit voluptates!
+    </div>
+    <script>
+        const bg_Mode = document.querySelectorAll(".dark")
+        const btn = document.getElementById("checkbox");
+        btn.addEventListener("click", function () {
+            bg_Mode.forEach(bg_Mode => function () {
+                bg_Mode.classList.toggle("active");
+                const check = document.querySelector(".check");
+                document.querySelector(".box").classList.toggle("fill");
+                document.querySelector(".box2").classList.toggle("fill");
+                if(bg_Mode.classList.toggle("acitve") === true) check.style.boxShadow = "0 0 0 4px rgb(255, 71, 58)";
+                else check.style.boxShadow = "0 0 0 4px rgb(0, 255, 157)";     
+            }());
+        });
+    </script>
+</body>
+</html>

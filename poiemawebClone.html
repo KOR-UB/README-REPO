@@ -64,6 +64,12 @@
         {
             color: rgb(255, 102, 0);
         }
+        .sec4 .title i,
+        .sec4 .title .titleBx .titlenum,
+        .sec4 .content ol li a::before
+        {
+            color: rgb(179, 179, 179);
+        }
         header h1
         {
             font-size: 3.5vw;
@@ -121,7 +127,7 @@
             padding: 15px;
             min-height: 120px;
             width: calc(1140px - 270px);
-            background: white;
+            background: rgb(247, 247, 247);
             font-weight: bold;
             border-top: 1px solid #ebeff5;
             border-bottom: 1px solid #ebeff5;
@@ -228,8 +234,8 @@
                     <li class="clear"><a href="poiema19.html">프로토타입</a></li>
                     <li class="clear"><a href="poiema20.html">strict mode</a></li>
                     <li class="clear"><a href="poiema21.html">빌트인 객체</a></li>
-                    <li><a href="#">this</a></li>
-                    <li><a href="#">실행 컨텍스트</a></li>
+                    <li class="clear"><a href="poiema22.html">this</a></li>
+                    <li class="clear"><a href="poiema23.html">실행 컨텍스트</a></li>
                     <li><a href="#">클로저</a></li>
                     <li><a href="#">클래스</a></li>
                     <li><a href="#">ES6 함수의 추가 기능</a></li>
@@ -273,6 +279,39 @@
                 </ol>
             </div>
         </div>
+        <div class="sec sec4">
+            <div class="title">
+                <i class="devicon-devicon-plain"></i>
+                <div class="titleBx">
+                    <h2>DOM Control</h2>
+                    <p><em class="titlenum">3 </em>lessons</p> 
+                </div>
+            </div>
+            <div class="content">
+                <ol>
+                    <li class="clear"><a href="./DOM/Clock.html">시간 표기와 시계</a></li>
+                    <li class="clear"><a href="./DOM/BackgroundMode.html">Dark Mode & White Mode</a></li>
+                    <li class="clear"><a href="./DOM/Modal.html">모달</a></li>
+                </ol>
+            </div>
+        </div>
     </div>
+    <script>
+        const sec4 = document.querySelector(".sec4");
+        const sec4_title = sec4.querySelector(".title");
+        const sec4_content = sec4.querySelector(".content");
+        console.log(sec4_title.offsetHeight)
+        sec4_title.style.height = sec4_content.offsetHeight + "px";
+
+        const mql = window.matchMedia("screen and (max-width: 1160px)");
+
+        mql.addListener(function(e) {
+            if(e.matches) {
+                sec4_title.style.height = 70 + "px";
+            } else {
+                sec4_title.style.height = sec4_content.offsetHeight + "px";
+            }
+        });
+    </script>
 </body>
 </html>
