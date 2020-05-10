@@ -301,17 +301,17 @@
         const sec4_title = sec4.querySelector(".title");
         const sec4_content = sec4.querySelector(".content");
         console.log(sec4_title.offsetHeight)
-        sec4_title.style.height = sec4_content.offsetHeight + "px";
+        sec4_title.style.minHeight = sec4_content.offsetHeight + "px";
 
-        const mql = window.matchMedia("screen and (max-width: 1160px)");
+        // const mql = window.matchMedia("screen and (max-width: 1160px)") ;
 
-        mql.addListener(function(e) {
-            if(e.matches) {
-                sec4_title.style.height = 70 + "px";
-            } else {
-                sec4_title.style.height = sec4_content.offsetHeight + "px";
-            }
-        });
+        // mql.addListener(function(e) {
+        //     if(e.matches) {
+        //         sec4_title.style.minHeight = 70 + "px";
+        //     } else {
+        //         sec4_title.style.height = sec4_content.offsetHeight + "px";
+        //     }
+        // });
     </script>
 </body>
 </html>
