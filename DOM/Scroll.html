@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스크롤 제어</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            min-height: 300vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 1s ease-in-out;
+            background: #fff;
+        }
+        h1
+        {
+            position: fixed;
+            top: 30%;
+            left: 38%;
+            font-size: 5em;
+            mix-blend-mode: screen;
+        }
+        h2
+        {
+            position: fixed;
+            top: 40%;
+            left: 47%;
+            font-size: 3em;
+        }
+        h2.active
+        {
+            color: white;
+            mix-blend-mode: normal;
+        }
+        header
+        {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: skyblue;
+            opacity: 0.5;
+            transition: 0.2s ease-in-out;
+        }
+        header.active
+        {
+            opacity: 1;
+            border-bottom: 5px dashed rgb(0, 0, 0);
+        }
+        .Box-width
+        {
+            height: 100px;
+            background: rgb(43, 43, 43);
+        }
+        .Box-height
+        {
+            width: 100px;
+            background: rgb(104, 58, 58);
+        }
+        body.active
+        {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <h1>Scroll Please</h1>
+    <h2 class="pos-y">0</h2>
+    <div class="Box-width"></div>
+    <div class="Box-height"></div>
+    <script>
+        const posY = document.querySelector(".pos-y");
+        window.addEventListener("scroll", function() {
+            console.log(window.scrollY);
+            const scroll_Y = window.scrollY;
+            posY.textContent = scroll_Y;
+            document.querySelector("header").classList.toggle("active",scroll_Y > 0);
+            document.querySelector(".Box-width").style.width = scroll_Y + "px";
+            document.querySelector(".Box-width").style.height = scroll_Y + "px";
+            document.querySelector(".Box-height").style.width = scroll_Y + "px";
+            document.querySelector(".Box-height").style.height = scroll_Y + "px";
+            posY.classList.toggle("active", scroll_Y > 670);
+            document.querySelector("body").classList.toggle("active",scroll_Y === 1874);
+        })
+    </script>
+</body>
+</html>
