@@ -23,5 +23,4 @@
 //     console.log("!");
 //   }
 // }
-// obj.sayHi();
-// obj.getHi();
+// obj.sayHi();;

@@ -1,101 +1,165 @@
  <!DOCTYPE html>
  <html lang="en">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Carousel</title>
-     <style>
-        *
-        {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body 
-        {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .carousel
-        {
-            width: 700px;
-            height: 400px;
-            background: skyblue;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .carousel .viewBox
-        {
-            position: relative;
-            width: 400px;
-            height: 300px;
-        }
-        .carousel .view
-        {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: red;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 3em;
-        }
-        .carousel button
-        {
-            font-size: 3em;
-            cursor: pointer;
-            background: #fff;
-            border: 1px solid black;
-            border-radius: 50%;
-            padding: 0px 13px;
-        }
-     </style>
- </head>
- <body>
-    <div class="carousel">
-        <div class="left"><button class="leftBtn">&lt;</button></div>
-        <div class="viewBox">
-            <div class="view">1</div>
-        </div>
-        <div class="right"><button class="rightBtn">&gt;</button></div>
-    </div>
-    <script>
-        const Carousel = (function () {
-            const carousel = document.querySelector(".carousel"),
-            carousel_left = carousel.querySelector(".leftBtn"),
-            carousel_right = carousel.querySelector(".rightBtn"),
-            carousel_view = carousel.querySelector(".viewBox");
 
-            let num = 1;
-            function generator (num) {
-                const View = document.createElement("div");
-                View.className = "view";
-                View.textContent = num;
-                carousel_view.appendChild(View);
-            }
-            return {
-                leftHandler () {
-                    if(num > 1)
-                    {
-                        --num;
-                        generator(num);
-                    }
-                },
-                rightHandler () {
-                    ++num;
-                    generator(num);
-                },
-                carousel_left,
-                carousel_right
-            }
-        }());
-        
-        Carousel.carousel_left.addEventListener("click", Carousel.leftHandler);
-        Carousel.carousel_right.addEventListener("click", Carousel.rightHandler);
-    </script>
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Carousel</title>
+   <style>
+     * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+     }
+
+     body {
+       width: 100%;
+       min-height: 100vh;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+
+     .carousel {
+       width: 100%;
+       height: 400px;
+       max-width: 700px;
+       background: rgb(200, 206, 209);
+       border: 3px solid black;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+     }
+
+     .carousel .viewBox {
+       position: relative;
+       width: 400px;
+       height: 300px;
+     }
+
+     .carousel .view {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       font-size: 3em;
+       border: 1px solid black;
+     }
+     .carousel .view:nth-child(1)
+     {
+        background: red;
+     }
+     .carousel .view:nth-child(2)
+     {
+        background: violet;
+     }
+     .carousel .view:nth-child(3)
+     {
+        background: rgb(231, 238, 130);
+     }
+     .carousel .view:nth-child(4)
+     {
+        background: rgb(139, 238, 130);
+     }
+     .carousel .view:nth-child(5)
+     {
+        background: rgb(130, 155, 238);
+     }
+     .carousel button {
+       margin: 15px;
+       font-size: 3em;
+       cursor: pointer;
+       background: #fff;
+       border: 1px solid black;
+       border-radius: 50%;
+       padding: 0px 13px;
+     }
+   </style>
+ </head>
+
+ <body>
+   <div class="carousel">
+     <div class="left"><button class="leftBtn">&lt;</button></div>
+     <div class="viewBox">
+       <div class="view">1</div>
+       <div class="view">2</div>
+       <div class="view">3</div>
+       <div class="view">4</div>
+       <div class="view">5</div>
+     </div>
+     <div class="right"><button class="rightBtn">&gt;</button></div>
+   </div>
+   <script>
+     const Carousel = (function () {
+       const carousel = document.querySelector(".carousel"),
+         carousel_left = carousel.querySelector(".leftBtn"),
+         carousel_right = carousel.querySelector(".rightBtn"),
+         carousel_view = carousel.querySelector(".viewBox");
+
+       let num = 0;
+       // function generator (num) {
+       //     const View = document.createElement("div");
+       //     View.className = "view";
+       //     View.textContent = num;
+       //     carousel_view.appendChild(View);
+       // }
+       function z_indexChange(n) {
+         const view = document.querySelectorAll(".view");
+         for (let i = 0; i < view.length; i++) {
+           view[i].style.zIndex = 0;
+         }
+         view[n].style.zIndex = 1;
+         console.log(num);
+       }
+       z_indexChange(0);
+       return {
+         leftHandler() {
+           if (num === 0) 
+           {
+              num = 4;
+              z_indexChange(num);
+           }
+           else if (num > 0) {
+             --num;
+             // generator(num);
+             z_indexChange(num);
+           }
+         },
+         rightHandler() {
+          if (num === 4) 
+           {
+              num = 0;
+              z_indexChange(num);
+           }
+           else if (num < 4) {
+             ++num;
+             // generator(num);
+             z_indexChange(num);
+           }
+         },
+         carousel_left,
+         carousel_right
+       }
+     }());
+
+     Carousel.carousel_left.addEventListener("click", Carousel.leftHandler);
+     Carousel.carousel_right.addEventListener("click", Carousel.rightHandler);
+   </script>
+   <script>
+     const myPromise = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        // resolve("result");
+        reject(new Error());
+      },1000)
+     });
+     myPromise.then(result => {
+       console.log(result)
+     }).catch( e => {
+       console.log(e);
+     })
+   </script>
  </body>
+
  </html>
