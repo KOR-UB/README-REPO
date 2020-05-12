@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question</title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        section
+        {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: slategrey;
+            flex-flow: column;
+        }
+        section ul
+        {
+            list-style: none;
+        }
+        .txt-blue { color: blue; }
+        .txt-red { color: red; }
+
+    </style>
+</head>
+<body>
+    <section>
+        <h2>질문 리스트</h2>
+        <ul>
+            <li>뿝!</li>
+        </ul>
+        <ul class="list">
+            <li class="txt-blue">1번</li>
+            <li class="txt-blue">2번</li>
+            <li class="txt-blue">3번</li>
+        </ul>
+    </section>
+    <script>
+        const $li = document.getElementsByClassName('txt-blue');
+        const bodyTag = document.querySelectorAll("body");
+        bodyTag.forEach(bodyTag => bodyTag.onclick = logMessage);
+
+        function logMessage(msg) {
+            alert(msg || 'logging');
+        }
+        for (let i = 0; i < $li.length; i++) {
+          $li[i].className = 'txt-red';
+        }
+    </script>
+</body>
+</html>

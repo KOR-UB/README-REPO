@@ -30,7 +30,8 @@ body
     background: #fff;
 }
 .js-text,
-.code-text
+.code-text,
+.html-text
 {
     margin: 20px 0;
     background: #282a36;
@@ -38,8 +39,14 @@ body
     position: relative;
     letter-spacing: 0.15em;
 }
+.code-text
+{
+    line-height: 24px;
+    font-size: 0.9em;
+}
 .js-text::before,
-.code-text::before
+.code-text::before,
+.html-text::before
 {
     content: "JAVASCRIPT";
     position: absolute;
@@ -53,6 +60,13 @@ body
 {
     content: "CODE";
     background: #32867b;
+    line-height: 16px;
+}
+.html-text::before
+{
+    content: "HTML";
+    background: #324d86;
+    padding-left: 8px;
     line-height: 16px;
 }
 .js-text .keyword
