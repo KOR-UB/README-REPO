@@ -8,13 +8,58 @@
 <body>
     <h1></h1>
     <script>
+      class eventTest {
+        constructor(name) {
+          this.name = name;
+        }
+        handleE1() {
+          return `${_name} 확인`
+        }
+
+      }
         const h1 = document.querySelector("h1");
-        let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        arr.splice(1, 4, 20, 30, 40, 50)
+        // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // arr.splice(1, 4, 20, 30, 40, 50)
         // const newArr = [3, ...arr]
-        const person = (name => ({sayHi() {return `hi my name is ${name}.`;}
-        }))('UB');
-        h1.textContent = person.sayHi();
+        // const person = (name => ({sayHi() {return `hi my name is ${name}.`;}
+        // }))('UB');
+        // const str = "Hello world!".split("").reverse().join("");
+        // const arr2 = [1, 2, 3];
+        // arr2.forEach((v, i, arr) => {
+        //   console.log(v, i , arr);
+        // })
+        let todos = [
+          {
+            id:1,
+            content: "HTML",
+            completed: false
+          },
+          {
+            id:2,
+            content: "CSS",
+            completed: true
+          },
+          {
+            id:3,
+            content: "JavaScript",
+            completed: false
+          }
+        ];
+        const todosmap = todos.map(todo => todo.id);
+        const arr = [];
+        for(let i = 0; i < todos.length; i++)
+        {
+          arr.push(todos[i].id); 
+        }
+        h1.textContent = todosmap;
+      // class Person {
+      //   say = () => {};
+      //   constructor () {
+      //     this.name = "Lee";
+      //     this.say = () => {};
+      //   }
+      // }
+      // console.dir(new Person()); //Person {name: "Lee"};
     </script>
 </body>
 </html>

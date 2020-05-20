@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button class="makeBtn">Make List</button>
+  <ul class="list">
+
+  </ul>
+  <script>
+    window.onload = function () {
+      const listNode = document.querySelector(".list");
+        const makeBtn = document.querySelector(".makeBtn");
+      const NodeTest = (function () {
+        let num = 0;
+        const date = new Date();
+        return {
+          createHandler() {
+            num++;
+            switch (num) {
+              case 1:
+              NodeTest.handlerDateEvent(date);
+              break;
+              case 2:
+              const year = date.getFullYear();
+              NodeTest.handlerDateEvent(year, " 년도 getFullYear()");
+              break;
+              case 3:
+              const h = date.getHours();
+              NodeTest.handlerDateEvent(h, " 시간 getHours()");
+              break;
+              case 4:
+              const m = date.getMinutes();
+              NodeTest.handlerDateEvent(m, " 분 getMinutes()");
+              break;
+              case 5:
+              const s = date.getSeconds();
+              NodeTest.handlerDateEvent(s, " 초 getSeconds()");
+              break;
+              case 6:
+              const time = date.getTime();
+              NodeTest.handlerDateEvent(time, " 타임 getTime()");
+              break;
+              case 7:
+              const ms = date.getMilliseconds();
+              NodeTest.handlerDateEvent(ms, " 밀리초 getMilliseconds()");
+              break;
+              case 8:
+              const month = date.getMonth();
+              NodeTest.handlerDateEvent(month + 1, " 달 getMonth()"); //0~11까지라서 +1을 해줘야 원하는 값이 나온다.
+              break;
+              case 9:
+              const toDateString = date.toDateString();
+              NodeTest.handlerDateEvent(toDateString, " 데이트스트링 toDateString()"); //0~11까지라서 +1을 해줘야 원하는 값이 나온다.
+              break;
+            }
+          },
+          handlerDateEvent(date, str) {
+            const li = document.createElement("li");
+            li.textContent = date + str;
+            listNode.appendChild(li);
+          }
+        }
+      }());
+      makeBtn.addEventListener("click", NodeTest.createHandler)
+    };
+  </script>
+</body>
+
+</html>
