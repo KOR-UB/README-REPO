@@ -73,16 +73,13 @@ console.log(todos);
 function countCompletedTodos() {
   // let num = 0;
   // todos.filter(todo => todo.completed === true ? ++num : num);
-  return todos.filter(todo => todo.completed === true).length;
   // return num;
+  return todos.filter(todo => todo.completed === true).length;
 }
 
 console.log(countCompletedTodos()); // 1
 
 function getMaxId() {
-//   // let max = 0;
-//   todos.filter(todo => max = todo.id > max ? todo.id : max);
-//   // return max;
   // let max = 0;
   // return todos.filter(todo => todo.id > max).length;
   return Math.max(...todos.map(todo => todo.id));
