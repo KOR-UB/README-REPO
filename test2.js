@@ -57,24 +57,36 @@ addTodo({ id: 4, content: 'Test', completed: false });
 
 console.log(todos);
 
-// function removeTodo(id) {
-//   todos.splice(id - 1, 1);
-// }
+todos = [
+  { id: 3, content: 'HTML', completed: false },
+  { id: 2, content: 'CSS', completed: true },
+  { id: 1, content: 'Javascript', completed: false }
+];
 
-// removeTodo(2);
+function removeTodo(id) {
+  todos = todos.filter(todo => todo.id !== id);
+}
 
-// console.log(todos);
+removeTodo(2);
+
+console.log(todos);
 /*
 [
   { id: 3, content: 'HTML', completed: false },
   { id: 1, content: 'Javascript', completed: false }
 ]
 */
+todos = [
+  { id: 3, content: 'HTML', completed: false },
+  { id: 2, content: 'CSS', completed: true },
+  { id: 1, content: 'Javascript', completed: false }
+];
+
 function countCompletedTodos() {
   // let num = 0;
   // todos.filter(todo => todo.completed === true ? ++num : num);
   // return num;
-  return todos.filter(todo => todo.completed === true).length;
+  return todos.filter(todo => todo.completed).length;
 }
 
 console.log(countCompletedTodos()); // 1
@@ -82,6 +94,6 @@ console.log(countCompletedTodos()); // 1
 function getMaxId() {
   // let max = 0;
   // return todos.filter(todo => todo.id > max).length;
-  return Math.max(...todos.map(todo => todo.id));
+  return todos.length ? Math.max(...todos.map(todo => todo.id)) : 0;
 }
-console.log(getMaxId()); // 3
+console.log(getMaxId()); // 3 

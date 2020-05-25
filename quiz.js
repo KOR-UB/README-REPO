@@ -38,7 +38,9 @@ const kvArray = [{
     value: 30
   }
 ];
-const reformattedArray =  [...kvArray].map(kvary => [kvary.key, kvary.value]);
+const reformattedArray =  [...kvArray].forEach(kvary => {
+  // re
+});
 console.log('Q5');
 console.log(reformattedArray);
 /*
@@ -48,3 +50,9 @@ console.log(reformattedArray);
   { '3': 30 }
 ]
 */
+const target = 'Is this all there is?';
+
+// 임의의 3자리 문자열을 검색
+const regExp = /./g;
+
+console.log(target.match(regExp));// -> ["Is ", "thi", "s a", "ll ", "the", "re ", "is?"]);
