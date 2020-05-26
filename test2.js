@@ -92,8 +92,6 @@ function countCompletedTodos() {
 console.log(countCompletedTodos()); // 1
 
 function getMaxId() {
-  // let max = 0;
-  // return todos.filter(todo => todo.id > max).length;
   return todos.length ? Math.max(...todos.map(todo => todo.id)) : 0;
 }
 console.log(getMaxId()); // 3 

@@ -143,7 +143,7 @@
     ];
     //6번
     function toggleCompletedById(id) {
-      todos2 = todos2.map(todo => [{...todo}]);
+      todos2 = todos2.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo));
     }
 
     toggleCompletedById(2);
@@ -167,6 +167,12 @@
       }
     ];
     //7번
+    function toggleCompletedAll() {
+      todos2 = todos2.map(todo => ({ ...todo, completed: true }));
+    }
+    toggleCompletedAll();
+
+    console.log(todos2);
 
     todos2 = [{
         id: 3,

@@ -78,4 +78,14 @@
 // const result = values.filter((v, i, arr) => arr.indexOf(v) === i);
 // console.log(result);
 
-const result = [1, 2, 3].forEach(console.log);
+// const result = [1, 2, 3].forEach(console.log);
+
+const todos = [
+  { id: 1, content: 'HTML', completed: true },
+  { id: 2, content: 'CSS', completed: false },
+  { id: 3, content: 'JS', completed: false }
+];
+
+// todos 배열의 두번째 요소인 객체로부터 id 프로퍼티만을 추출한다.
+const [, { id }] = todos;
+console.log(id); // 2
